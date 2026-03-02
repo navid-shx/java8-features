@@ -35,9 +35,12 @@ public class Summing extends RecursiveTask<Long> {
         leftTask.fork();
 
         Summing rightTask = new Summing(numbers, start + length/2, end);
-
         Long rightResult = rightTask.compute();
+
+        //It is necessary to call join() after the computation of both subtasks has been started.
+        //Otherwise, you’ll end up with a slower end up with a slower and more complex version of your original sequential algorithm.
         Long leftResult = leftTask.join();
+
         return leftResult + rightResult;
     }
 

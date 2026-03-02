@@ -25,6 +25,8 @@ public class Factorial extends RecursiveTask<Long> {
         Factorial rightTask = new Factorial(this.number);
         long rightResult = rightTask.computeSequentially();
 
+        //It is necessary to call join() after the computation of both subtasks has been started.
+        //Otherwise, you’ll end up with a slower end up with a slower and more complex version of your original sequential algorithm.
         Long leftResult = leftTask.join();
 
         return rightResult * leftResult;
