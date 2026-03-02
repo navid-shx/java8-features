@@ -1,5 +1,7 @@
 package ca.ns.navid.shx.forkjoin;
 
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.concurrent.RecursiveTask;
 
 public class Factorial extends RecursiveTask<Long> {
@@ -35,5 +37,14 @@ public class Factorial extends RecursiveTask<Long> {
         }
 
         return this.number;
+    }
+
+
+    static void main() {
+
+        int number = 5;
+        ForkJoinTask<Long> factorial = new Factorial(number);
+        Long result = new ForkJoinPool(1).invoke(factorial);
+        IO.println(number + "! = " + result);
     }
 }
