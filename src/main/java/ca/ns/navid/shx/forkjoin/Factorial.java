@@ -46,7 +46,7 @@ public class Factorial extends RecursiveTask<Long> {
 
         int number = 5;
         ForkJoinTask<Long> factorial = new Factorial(number);
-        Long result = new ForkJoinPool(1).invoke(factorial);
+        Long result = new ForkJoinPool(Runtime.getRuntime().availableProcessors()).invoke(factorial);
         IO.println(number + "! = " + result);
     }
 }

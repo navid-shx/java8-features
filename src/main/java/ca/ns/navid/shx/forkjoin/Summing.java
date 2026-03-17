@@ -61,7 +61,7 @@ public class Summing extends RecursiveTask<Long> {
         long number = 10;
         long[] numbers = LongStream.rangeClosed(1, number).toArray();
         ForkJoinTask<Long> task = new Summing(numbers);
-        Long result = new ForkJoinPool().invoke(task);
+        Long result = new ForkJoinPool(Runtime.getRuntime().availableProcessors()).invoke(task);
         IO.println(result);
     }
 }
