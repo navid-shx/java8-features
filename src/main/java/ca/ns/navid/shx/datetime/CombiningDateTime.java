@@ -12,13 +12,13 @@ public class CombiningDateTime {
         LocalDate date = LocalDate.now();
         LocalTime time = LocalTime.now();
 
-        LocalDateTime date1 = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45, 20);
-        LocalDateTime date2 = LocalDateTime.of(date, time);
-        LocalDateTime date3 = date.atTime(13, 45, 20);
-        LocalDateTime date4 = date.atTime(time);
-        LocalDateTime date5 = time.atDate(date);
+        LocalDateTime dateTime1 = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45, 20);
+        LocalDateTime dateTime2 = LocalDateTime.of(date, time);
+        LocalDateTime dateTime3 = date.atTime(13, 45, 20);
+        LocalDateTime dateTime4 = date.atTime(time);
+        LocalDateTime dateTime5 = time.atDate(date);
 
-        LocalDate dateFromDateTime = date1.toLocalDate();
-        LocalTime timeFromDateTime = date1.toLocalTime();
+        LocalDate dateFromDateTime = dateTime1.toLocalDate();
+        LocalTime timeFromDateTime = dateTime1.toLocalTime();
     }
 }
