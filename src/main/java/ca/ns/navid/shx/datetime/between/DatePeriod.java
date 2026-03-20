@@ -16,6 +16,8 @@ public class DatePeriod {
         int days = period.getDays();
 
         IO.println("From: " + startDate + "\t to: " + endDate);
-        IO.println("Years: " + years +  " Months: " + months + " Days: " + days);
+        IO.println("Years: " + years);
+        IO.println("Months: " + months);
+        IO.println("Days: " + days);
     }
 }
